@@ -100,3 +100,12 @@ def predict(data: PredictionInput):
 @app.get("/health")
 def health():
     return {"status": "ok", "models": list(models.keys())}
+
+@app.get("/")
+def home():
+    return {
+        "message": "Gaming Addiction Risk Predictor API is live",
+        "docs": "/docs",
+        "health": "/health",
+        "predict": "/predict"
+    }
